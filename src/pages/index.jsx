@@ -22,7 +22,7 @@ export default function Home() {
 
         const jsonData = await response.json();
 
-        console.log(jsonData);
+        // console.log(jsonData);
         setData(jsonData);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -127,7 +127,7 @@ export default function Home() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <div className="absolute top-3 right-2 text-gray-500 ">
+              <div className="absolute top-3 right-2 text-gray-700 ">
                 <AiOutlineSearch size={28} />
               </div>
               {/* <div
