@@ -104,7 +104,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Layout title=".Dev" className={` bg-primary`}>
+    <Layout title=".Dev" className={` bg-gray-500`}>
       <div className="container mx-auto ">
         <section>
           <div className="logo bg-blue-00 flex justify-center w-full md:mt-7 px-3  ">
@@ -127,7 +127,7 @@ export default function Home() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <div className="absolute top-3 right-2 text-primary ">
+              <div className="absolute top-3 right-2 text-gray-500 ">
                 <AiOutlineSearch size={28} />
               </div>
               {/* <div
