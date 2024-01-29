@@ -34,6 +34,11 @@ export default function Header() {
               TELEGRAM
             </a>
           </li>
+          <li>
+            <a href="https://fronkcartel.com" target="_blank">
+              Fronkcartel
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
