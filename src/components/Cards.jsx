@@ -90,13 +90,13 @@ export default function Cards({ info }) {
         <div>
           <div className="flex justify-end items-center px-3">
             <p className="text-gray-700 font-bold px-2 py-2 text-sm text-center">
-              Copy ID
+              {copied ? "" : "Copy ID"}
             </p>
             <div onClick={handleCopyClick} className="text-gray-700 ">
               {copied ? (
-                <div className="text-gray-800">Copied</div>
+                <div className="text-gray-700">Copied</div>
               ) : (
-                <div className="flex items-center text-gray-800 ">
+                <div className="flex items-center text-gray-700 ">
                   {" "}
                   <MdOutlineContentCopy fill="#374151" size={20} />
                   {/* <span>copy Id</span> */}
