@@ -104,7 +104,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Layout title=".Dev" className={` bg-gray-500`}>
+    <Layout title=".Devs" className={` bg-gray-500`}>
       <div className="container mx-auto ">
         <section>
           <div className="logo bg-blue-00 flex justify-center w-full md:mt-7 px-3  ">
