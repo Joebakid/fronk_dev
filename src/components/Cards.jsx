@@ -72,7 +72,7 @@ export default function Cards({ info }) {
         className="cards overflow-hidden opacity-0 cursor-pointer"
       >
         <div className="flex items-center justify-center">
-          <p className="text-gray-500 w-11/12  font-bold  py-1 text-sm text-center">
+          <p className="text-gray-800 w-11/12  font-bold  py-1 text-sm text-center">
             {info.name}
           </p>
         </div>
@@ -89,14 +89,14 @@ export default function Cards({ info }) {
         </div>
         <div>
           <div className="flex justify-end items-center px-3">
-            <p className="text-primary font-bold px-2 py-2 text-sm text-center">
+            <p className="text-gray-800 font-bold px-2 py-2 text-sm text-center">
               Copy ID
             </p>
             <div onClick={handleCopyClick} className="text-primary ">
               {copied ? (
-                <div className="text-gray-500">Copied</div>
+                <div className="text-gray-800">Copied</div>
               ) : (
-                <div className="flex items-center text-gray-500 ">
+                <div className="flex items-center text-gray-800 ">
                   {" "}
                   <MdOutlineContentCopy fill="#1e6f50" size={20} />
                   {/* <span>copy Id</span> */}
