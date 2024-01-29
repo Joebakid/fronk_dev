@@ -7,37 +7,18 @@ import { MdOutlineContentCopy } from "react-icons/md";
 // import pic from "../../public/assets/images/300.png";
 
 export default function Cards({ info }) {
-  // const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const [copied, setCopied] = useState(false);
   const cardRef = useRef(null);
   // const [digit, setDigit] = useState("");
 
   const imageName = info.image;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  // const getNumber = () => {
-  //   const match = imageName.match(/\d+/);
-  //   if (match) {
-  //     const extractedNumber = parseInt(match[0], 10);
-  //     setDigit(extractedNumber);
-  //   } else {
-  //     console.log("No number found in the name.");
-  //   }
-  // };
 
-  // useEffect(() => {
-  //   getNumber();
-  // }, [getNumber]);
+  const show = () => {
+    setShowModal(!showModal);
 
-  // const image =
-  //   digit <= 5000
-  //     ? `https://ik.imagekit.io/Cartel/1/${digit}.png`
-  //     : `https://ik.imagekit.io/Cartel/2/${digit}.png`;
-
-  // const show = () => {
-  //   setShowModal(!showModal);
-  // };
-
-  // console.log(info);
+    // console.log(showModal);
+  };
 
   const handleCopyClick = () => {
     navigator.clipboard.writeText(info.inscriptionId);
@@ -69,6 +50,7 @@ export default function Cards({ info }) {
     <>
       <div
         ref={cardRef}
+        onClick={show}
         className="cards overflow-hidden opacity-0 cursor-pointer"
       >
         <div className="flex items-center justify-center">
@@ -106,6 +88,17 @@ export default function Cards({ info }) {
           </div>
         </div>
       </div>
+      {showModal && (
+        <>
+          <div
+            onClick={show}
+            className="cursor-pointer text-3xl fixed z-[100] right-5 top-5"
+          >
+            X
+          </div>
+          <Modal info={info} img={`/assets/images/${imageName}`} />
+        </>
+      )}
     </>
   );
 }

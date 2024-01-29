@@ -11,6 +11,7 @@ import Image from "next/image";
 
 export default function Home() {
   const [data, setData] = useState([]);
+  const [data2, setData2] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const itemsPerPage = 100;
@@ -18,12 +19,15 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/dev-data.json");
+        const response = await fetch("/data.json");
+        // const res = await fetch("/devs.json");
 
         const jsonData = await response.json();
+        // const jsonData2 = await res.json();
 
         // console.log(jsonData);
         setData(jsonData);
+        // setData2(jsonData2);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
