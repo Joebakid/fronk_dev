@@ -25,10 +25,14 @@ export default function Header() {
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/FronkCartel">X</a>
+            <a href="https://twitter.com/FronkCartel" target="_blank">
+              X
+            </a>
           </li>
           <li>
-            <a href="https://t.me/fronkcartel">TELEGRAM</a>
+            <a href="https://t.me/fronkcartel" target="_blank">
+              TELEGRAM
+            </a>
           </li>
         </ul>
       </nav>
