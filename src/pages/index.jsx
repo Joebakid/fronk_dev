@@ -151,10 +151,10 @@ export default function Home() {
             <>
               <div className="image-gallery mt-10">{renderData()}</div>
               <div>
-                <div className="flex items-center justify-between mt-14 mb-2 px-3">
+                {/* <div className="flex items-center justify-between mt-14 mb-2 px-3">
                   <div className="arr"> &larr; </div>
                   <div> &rarr; </div>
-                </div>
+                </div> */}
                 <div className="flex justify-start items-center px-3 space-x-5 overflow-x-scroll pb-4 hide-scroll">
                   {/* {renderPaginationButtons()} */}
                 </div>
