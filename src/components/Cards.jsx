@@ -6,36 +6,36 @@ import Modal from "./Modal";
 import { MdOutlineContentCopy } from "react-icons/md";
 // import pic from "../../public/assets/images/300.png";
 
-export default function Cards({ info, rank }) {
-  const [showModal, setShowModal] = useState(false);
+export default function Cards({ info }) {
+  // const [showModal, setShowModal] = useState(false);
   const [copied, setCopied] = useState(false);
   const cardRef = useRef(null);
-  const [digit, setDigit] = useState("");
+  // const [digit, setDigit] = useState("");
 
-  const imageName = info.name;
+  const imageName = info.image;
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const getNumber = () => {
-    const match = imageName.match(/\d+/);
-    if (match) {
-      const extractedNumber = parseInt(match[0], 10);
-      setDigit(extractedNumber);
-    } else {
-      console.log("No number found in the name.");
-    }
-  };
+  // const getNumber = () => {
+  //   const match = imageName.match(/\d+/);
+  //   if (match) {
+  //     const extractedNumber = parseInt(match[0], 10);
+  //     setDigit(extractedNumber);
+  //   } else {
+  //     console.log("No number found in the name.");
+  //   }
+  // };
 
-  useEffect(() => {
-    getNumber();
-  }, [getNumber]);
+  // useEffect(() => {
+  //   getNumber();
+  // }, [getNumber]);
 
-  const image =
-    digit <= 5000
-      ? `https://ik.imagekit.io/Cartel/1/${digit}.png`
-      : `https://ik.imagekit.io/Cartel/2/${digit}.png`;
+  // const image =
+  //   digit <= 5000
+  //     ? `https://ik.imagekit.io/Cartel/1/${digit}.png`
+  //     : `https://ik.imagekit.io/Cartel/2/${digit}.png`;
 
-  const show = () => {
-    setShowModal(!showModal);
-  };
+  // const show = () => {
+  //   setShowModal(!showModal);
+  // };
 
   // console.log(info);
 
@@ -76,9 +76,9 @@ export default function Cards({ info, rank }) {
             {info.name}
           </p>
         </div>
-        <div onClick={show}>
+        <div>
           <img
-            src={image}
+            src={`/assets/images/${imageName}`}
             width={500}
             height={500}
             alt={info.name}
@@ -90,7 +90,7 @@ export default function Cards({ info, rank }) {
         <div>
           <div className="flex justify-end items-center px-3">
             <p className="text-primary font-bold px-2 py-2 text-sm text-center">
-              Rank {rank}
+            Copy ID
             </p>
             <div onClick={handleCopyClick} className="text-primary ">
               {copied ? (
@@ -106,17 +106,6 @@ export default function Cards({ info, rank }) {
           </div>
         </div>
       </div>
-      {showModal && (
-        <>
-          <div
-            onClick={show}
-            className="cursor-pointer text-3xl fixed z-[100] right-5 top-5"
-          >
-            X
-          </div>
-          <Modal info={info} img={image} />
-        </>
-      )}
     </>
   );
 }
